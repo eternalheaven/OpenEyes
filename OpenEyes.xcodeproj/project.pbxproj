@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FA652C1D241A615F0001A3A5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA652C1C241A615F0001A3A5 /* MainViewController.swift */; };
+		FA701727241A7EBC00D45AB8 /* LibViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA701726241A7EBC00D45AB8 /* LibViewController.swift */; };
 		FAB74D5E24190237005BA19B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74D5D24190237005BA19B /* AppDelegate.swift */; };
 		FAB74D6024190237005BA19B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74D5F24190237005BA19B /* SceneDelegate.swift */; };
 		FAB74D6224190237005BA19B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74D6124190237005BA19B /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		FA652C1C241A615F0001A3A5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		FA701726241A7EBC00D45AB8 /* LibViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibViewController.swift; sourceTree = "<group>"; };
 		FAB74D5A24190237005BA19B /* OpenEyes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenEyes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAB74D5D24190237005BA19B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAB74D5F24190237005BA19B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +44,9 @@
 		FA652C1E241A61A30001A3A5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FAB74D6124190237005BA19B /* ViewController.swift */,
+				FA701726241A7EBC00D45AB8 /* LibViewController.swift */,
+				FA652C1C241A615F0001A3A5 /* MainViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -65,11 +70,9 @@
 		FAB74D5C24190237005BA19B /* OpenEyes */ = {
 			isa = PBXGroup;
 			children = (
+				FA652C1E241A61A30001A3A5 /* Controllers */,
 				FAB74D5D24190237005BA19B /* AppDelegate.swift */,
 				FAB74D5F24190237005BA19B /* SceneDelegate.swift */,
-				FA652C1C241A615F0001A3A5 /* MainViewController.swift */,
-				FAB74D6124190237005BA19B /* ViewController.swift */,
-				FA652C1E241A61A30001A3A5 /* Controllers */,
 				FAB74D6324190237005BA19B /* Main.storyboard */,
 				FAB74D662419023A005BA19B /* Assets.xcassets */,
 				FAB74D682419023A005BA19B /* LaunchScreen.storyboard */,
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA701727241A7EBC00D45AB8 /* LibViewController.swift in Sources */,
 				FAB74D6224190237005BA19B /* ViewController.swift in Sources */,
 				FAB74D5E24190237005BA19B /* AppDelegate.swift in Sources */,
 				FAB74D6024190237005BA19B /* SceneDelegate.swift in Sources */,
