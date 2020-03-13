@@ -60,7 +60,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func beginButtonClicked (_ sender: UIButton) {
-        let mainViewContoller = ViewController()
+        let mainViewContoller = PhotoViewController()
         navigationController?.pushViewController(mainViewContoller, animated: true)
     }
     
