@@ -1,20 +1,19 @@
-//
-//  PhotosViewController.swift
+
+//  ViewController.swift
 //  OpenEyes
 //
-//  Created by Alexandr Khrutskiy on 18/03/2020.
+//  Created by Alexandr Khrutskiy on 11/03/2020.
 //  Copyright © 2020 Alexandr Khrutskiy. All rights reserved.
-//
+
 
 import UIKit
 
-class PhotoViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class FaceViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
-    typealias FilteringCompletion = ((UIImage?, Error?) -> ())
     var chosenImageView : UIImageView!
     var chooseButton : UIButton!
     var forwardButton : UIButton!
-    var label : UILabel!
+    var topLabel : UILabel!
     
     
     func pickerController() {
@@ -83,6 +82,8 @@ class PhotoViewController: UIViewController, UINavigationControllerDelegate, UII
             (forwardButton.heightAnchor.constraint(equalToConstant: 50)),
             (forwardButton.widthAnchor.constraint(equalToConstant: 150)),
         ])
+        forwardButton.addTarget(self, action: #selector(forwardButtonClicked(_:)),
+                                for: .touchDragInside)
         forwardButton.layer.cornerRadius = 12.0
         forwardButton.tintColor = .white
         //        forwardButton.addTarget(self, action: #selector(buttonClicked(_:)),
@@ -95,20 +96,25 @@ class PhotoViewController: UIViewController, UINavigationControllerDelegate, UII
         forwardButton.isEnabled = true
     }
     
-    func addLabel() {
-        let label = UILabel(frame: CGRect(x: 100, y: 100, width: 200, height: 401))
-        self.view.addSubview(label)
-        label.lineBreakMode = .byWordWrapping
-        label.numberOfLines = 2
-        label.font = label.font.withSize(30)
-        label.textAlignment = .center;
-        label.text = "Choose a photo where your eyes are closed "
-        label.textColor = .blue
-        label.translatesAutoresizingMaskIntoConstraints = false
+    @objc func forwardButtonClicked (_ sender: UIButton) {
+        let mainViewContoller = MainViewController()
+        navigationController?.pushViewController(mainViewContoller, animated: true)
+    }
+    
+    func addTopLabel() {
+        let topLabel = UILabel(frame: CGRect(x: 100, y: 100, width: 200, height: 401))
+        self.view.addSubview(topLabel)
+        topLabel.lineBreakMode = .byWordWrapping
+        topLabel.numberOfLines = 2
+        topLabel.font = topLabel.font.withSize(30)
+        topLabel.textAlignment = .center;
+        topLabel.text = "Choose a photo where we can detect your eyes"
+        topLabel.textColor = .blue
+        topLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            (label.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 50)),
-            (label.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor)),
-            (label.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor))
+            topLabel.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 50 ),
+            topLabel.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
+            topLabel.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor)
         ])
         
     }
@@ -129,13 +135,14 @@ class PhotoViewController: UIViewController, UINavigationControllerDelegate, UII
                ])
 
     }
-   
+
 }
-extension PhotoViewController {
+
+extension FaceViewController {
     private func commonInit() {
         view.backgroundColor = .white
         addButton()
-        addLabel()
+        addTopLabel()
         addView()
         addForwardButton()
     }

@@ -11,7 +11,7 @@ import UIKit
 class MainViewController: UIViewController {
     
     @IBOutlet var beginButton: UIButton!
-    @IBOutlet var libraryButton: UIButton!
+    @IBOutlet var aboutButton: UIButton!
     var image: UIImage!
     var imageView: UIImageView!
     
@@ -39,24 +39,27 @@ class MainViewController: UIViewController {
         self.beginButton = beginButton
     }
     
-    func addLibraryButton() {
-        let libraryButton = UIButton(type: .system)
-        self.view.addSubview(libraryButton)
-        libraryButton.translatesAutoresizingMaskIntoConstraints = false
-        libraryButton.setTitle("Your Library", for: .normal)
-        libraryButton.backgroundColor = .blue
-        libraryButton.layer.cornerRadius = 12.0
-        libraryButton.tintColor = .white
-        libraryButton.addTarget(self, action: #selector(libraryButtonClicked(_:)),
+    func addFaceButton() {
+        let faceButton = UIButton(type: .system)
+        self.view.addSubview(faceButton)
+        faceButton.translatesAutoresizingMaskIntoConstraints = false
+        faceButton.setTitle("Save your face", for: .normal)
+        faceButton.backgroundColor = UIColor.clear
+        faceButton.layer.borderWidth = 1.0
+        faceButton.layer.borderColor = UIColor.blue.cgColor
+        faceButton.setTitleColor(UIColor.blue, for: UIControl.State.normal)
+        faceButton.layer.cornerRadius = 12.0
+        faceButton.tintColor = .white
+        faceButton.addTarget(self, action: #selector(aboutButtonClicked(_:)),
                                 for: .touchDragInside)
         
         NSLayoutConstraint.activate([
-            (libraryButton.topAnchor.constraint(equalTo: beginButton.bottomAnchor, constant: 30)),
-            (libraryButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)),
-            (libraryButton.heightAnchor.constraint(equalToConstant: 50)),
-            (libraryButton.widthAnchor.constraint(equalToConstant: 200)),
+            (faceButton.topAnchor.constraint(equalTo: beginButton.bottomAnchor, constant: 80)),
+            (faceButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)),
+            (faceButton.heightAnchor.constraint(equalToConstant: 50)),
+            (faceButton.widthAnchor.constraint(equalToConstant: 200)),
         ])
-        self.libraryButton = libraryButton
+        self.aboutButton = faceButton
     }
     
     @IBAction func beginButtonClicked (_ sender: UIButton) {
@@ -64,13 +67,13 @@ class MainViewController: UIViewController {
         navigationController?.pushViewController(mainViewContoller, animated: true)
     }
     
-    @IBAction func libraryButtonClicked (_ sender: UIButton) {
-        let mainViewContoller = LibViewController()
+    @IBAction func aboutButtonClicked (_ sender: UIButton) {
+        let mainViewContoller = FaceViewController()
         navigationController?.pushViewController(mainViewContoller, animated: true)
     }
     
     func addLogo() {
-        let logoName = "FakeLogo.png"
+        let logoName = "LogoDummy.png"
         let image = UIImage(named: logoName)
         let imageView = UIImageView(image: image!)
         self.view.addSubview(imageView)
@@ -88,7 +91,7 @@ extension MainViewController {
     private func commonInit() {
         view.backgroundColor = .white
         addBeginButton()
-        addLibraryButton()
+        addFaceButton()
         addLogo()
     }
 }
