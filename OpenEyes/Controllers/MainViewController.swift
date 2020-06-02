@@ -10,7 +10,7 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    @IBOutlet var beginButton: UIButton!
+    public var beginButton: UIButton!
     @IBOutlet var aboutButton: UIButton!
     var image: UIImage!
     var imageView: UIImageView!
@@ -20,9 +20,26 @@ class MainViewController: UIViewController {
         commonInit()
     }
     
-    func addBeginButton() {
+    override func viewWillAppear(_ animated: Bool) {
+        setGradientBackground()
+        super.viewWillAppear(animated)
+    }
+    
+    func setGradientBackground() {
+        let colorTop =  UIColor(red: 255.0/255.0, green: 149.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
+        let colorBottom = UIColor(red: 255.0/255.0, green: 94.0/255.0, blue: 58.0/255.0, alpha: 1.0).cgColor
+
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [colorTop, colorBottom]
+        gradientLayer.locations = [0.0, 1.0]
+        gradientLayer.frame = self.view.layoutMarginsGuide.layoutFrame
+        self.view.layer.insertSublayer(gradientLayer, at:0)
+    }
+    
+    public func addBeginButton() {
         let beginButton = UIButton(type: .system)
         self.view.addSubview(beginButton)
+//        beginButton.isEnabled = false
         beginButton.translatesAutoresizingMaskIntoConstraints = false
         beginButton.setTitle("Create new photo", for: .normal)
         beginButton.backgroundColor = .blue
@@ -37,38 +54,11 @@ class MainViewController: UIViewController {
             (beginButton.widthAnchor.constraint(equalToConstant: 200)),
         ])
         self.beginButton = beginButton
-    }
+    }  
+
     
-    func addFaceButton() {
-        let faceButton = UIButton(type: .system)
-        self.view.addSubview(faceButton)
-        faceButton.translatesAutoresizingMaskIntoConstraints = false
-        faceButton.setTitle("Save your face", for: .normal)
-        faceButton.backgroundColor = UIColor.clear
-        faceButton.layer.borderWidth = 1.0
-        faceButton.layer.borderColor = UIColor.blue.cgColor
-        faceButton.setTitleColor(UIColor.blue, for: UIControl.State.normal)
-        faceButton.layer.cornerRadius = 12.0
-        faceButton.tintColor = .white
-        faceButton.addTarget(self, action: #selector(aboutButtonClicked(_:)),
-                                for: .touchDragInside)
-        
-        NSLayoutConstraint.activate([
-            (faceButton.topAnchor.constraint(equalTo: beginButton.bottomAnchor, constant: 80)),
-            (faceButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)),
-            (faceButton.heightAnchor.constraint(equalToConstant: 50)),
-            (faceButton.widthAnchor.constraint(equalToConstant: 200)),
-        ])
-        self.aboutButton = faceButton
-    }
-    
-    @IBAction func beginButtonClicked (_ sender: UIButton) {
+    @objc func beginButtonClicked (_ sender: UIButton) {
         let mainViewContoller = PhotoViewController()
-        navigationController?.pushViewController(mainViewContoller, animated: true)
-    }
-    
-    @IBAction func aboutButtonClicked (_ sender: UIButton) {
-        let mainViewContoller = FaceViewController()
         navigationController?.pushViewController(mainViewContoller, animated: true)
     }
     
@@ -77,11 +67,12 @@ class MainViewController: UIViewController {
         let image = UIImage(named: logoName)
         let imageView = UIImageView(image: image!)
         self.view.addSubview(imageView)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            (imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -380)),
+            (imageView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: -100)),
             (imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor)),
-            (imageView.heightAnchor.constraint(equalToConstant: 360)),
-            (imageView.widthAnchor.constraint(equalToConstant: 360)),
+//            (imageView.heightAnchor.constraint(equalToConstant: 360)),
+//            (imageView.widthAnchor.constraint(equalToConstant: 360)),
         ])
         self.imageView = imageView
     }
@@ -91,7 +82,6 @@ extension MainViewController {
     private func commonInit() {
         view.backgroundColor = .white
         addBeginButton()
-        addFaceButton()
         addLogo()
     }
 }

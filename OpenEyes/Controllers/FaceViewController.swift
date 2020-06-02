@@ -96,9 +96,10 @@ class FaceViewController: UIViewController, UINavigationControllerDelegate, UIIm
         forwardButton.isEnabled = true
     }
     
+        
     @objc func forwardButtonClicked (_ sender: UIButton) {
-        let mainViewContoller = MainViewController()
-        navigationController?.pushViewController(mainViewContoller, animated: true)
+        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
     
     func addTopLabel() {

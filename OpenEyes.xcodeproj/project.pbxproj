@@ -8,9 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		FA652C1D241A615F0001A3A5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA652C1C241A615F0001A3A5 /* MainViewController.swift */; };
+		FAA5A8CF2481536B00541F0E /* MLModelConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA5A8CE2481536B00541F0E /* MLModelConnector.swift */; };
+		FAA5A8D1248154A100541F0E /* ErrorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA5A8D0248154A100541F0E /* ErrorList.swift */; };
+		FAA5A8D3248155D800541F0E /* Resizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA5A8D2248155D800541F0E /* Resizing.swift */; };
+		FAA5A8D524815AD600541F0E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA5A8D424815AD600541F0E /* Model.swift */; };
+		FAA5A8D724815E9500541F0E /* CoreML.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA5A8D624815E9500541F0E /* CoreML.swift */; };
+		FAA5A8D92482CB1000541F0E /* ML Input + Output.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA5A8D82482CB1000541F0E /* ML Input + Output.swift */; };
+		FAA5A8DB2482D04200541F0E /* Pointillism.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = FAA5A8DA2482D04200541F0E /* Pointillism.mlmodel */; };
 		FAB74D5E24190237005BA19B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74D5D24190237005BA19B /* AppDelegate.swift */; };
 		FAB74D6024190237005BA19B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74D5F24190237005BA19B /* SceneDelegate.swift */; };
-		FAB74D6224190237005BA19B /* FaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74D6124190237005BA19B /* FaceViewController.swift */; };
 		FAB74D6524190237005BA19B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB74D6324190237005BA19B /* Main.storyboard */; };
 		FAB74D672419023A005BA19B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAB74D662419023A005BA19B /* Assets.xcassets */; };
 		FAB74D6A2419023A005BA19B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB74D682419023A005BA19B /* LaunchScreen.storyboard */; };
@@ -20,10 +26,16 @@
 
 /* Begin PBXFileReference section */
 		FA652C1C241A615F0001A3A5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		FAA5A8CE2481536B00541F0E /* MLModelConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLModelConnector.swift; sourceTree = "<group>"; };
+		FAA5A8D0248154A100541F0E /* ErrorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorList.swift; sourceTree = "<group>"; };
+		FAA5A8D2248155D800541F0E /* Resizing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resizing.swift; sourceTree = "<group>"; };
+		FAA5A8D424815AD600541F0E /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		FAA5A8D624815E9500541F0E /* CoreML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreML.swift; sourceTree = "<group>"; };
+		FAA5A8D82482CB1000541F0E /* ML Input + Output.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ML Input + Output.swift"; sourceTree = "<group>"; };
+		FAA5A8DA2482D04200541F0E /* Pointillism.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Pointillism.mlmodel; path = ../../../GitHub/NSTDemo/NSTDemo/Pointillism.mlmodel; sourceTree = "<group>"; };
 		FAB74D5A24190237005BA19B /* OpenEyes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenEyes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAB74D5D24190237005BA19B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAB74D5F24190237005BA19B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FAB74D6124190237005BA19B /* FaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceViewController.swift; sourceTree = "<group>"; };
 		FAB74D6424190237005BA19B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FAB74D662419023A005BA19B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAB74D692419023A005BA19B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,7 +59,6 @@
 			isa = PBXGroup;
 			children = (
 				FA652C1C241A615F0001A3A5 /* MainViewController.swift */,
-				FAB74D6124190237005BA19B /* FaceViewController.swift */,
 				FAFBDA4F2422217800C04B4C /* PhotoViewController.swift */,
 			);
 			path = Controllers;
@@ -72,12 +83,19 @@
 		FAB74D5C24190237005BA19B /* OpenEyes */ = {
 			isa = PBXGroup;
 			children = (
+				FAA5A8D82482CB1000541F0E /* ML Input + Output.swift */,
+				FAA5A8D424815AD600541F0E /* Model.swift */,
+				FAA5A8CE2481536B00541F0E /* MLModelConnector.swift */,
+				FAA5A8D0248154A100541F0E /* ErrorList.swift */,
+				FAA5A8D2248155D800541F0E /* Resizing.swift */,
+				FAA5A8D624815E9500541F0E /* CoreML.swift */,
 				FA652C1E241A61A30001A3A5 /* Controllers */,
 				FAB74D5D24190237005BA19B /* AppDelegate.swift */,
 				FAB74D5F24190237005BA19B /* SceneDelegate.swift */,
 				FAB74D6324190237005BA19B /* Main.storyboard */,
 				FAB74D662419023A005BA19B /* Assets.xcassets */,
 				FAFBDA51242372F700C04B4C /* StarryNight.mlmodel */,
+				FAA5A8DA2482D04200541F0E /* Pointillism.mlmodel */,
 				FAB74D682419023A005BA19B /* LaunchScreen.storyboard */,
 				FAB74D6B2419023A005BA19B /* Info.plist */,
 			);
@@ -155,12 +173,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAA5A8D724815E9500541F0E /* CoreML.swift in Sources */,
 				FAFBDA52242372F700C04B4C /* StarryNight.mlmodel in Sources */,
-				FAB74D6224190237005BA19B /* FaceViewController.swift in Sources */,
+				FAA5A8D3248155D800541F0E /* Resizing.swift in Sources */,
+				FAA5A8CF2481536B00541F0E /* MLModelConnector.swift in Sources */,
 				FAB74D5E24190237005BA19B /* AppDelegate.swift in Sources */,
+				FAA5A8D524815AD600541F0E /* Model.swift in Sources */,
+				FAA5A8DB2482D04200541F0E /* Pointillism.mlmodel in Sources */,
+				FAA5A8D1248154A100541F0E /* ErrorList.swift in Sources */,
 				FAFBDA502422217800C04B4C /* PhotoViewController.swift in Sources */,
 				FAB74D6024190237005BA19B /* SceneDelegate.swift in Sources */,
 				FA652C1D241A615F0001A3A5 /* MainViewController.swift in Sources */,
+				FAA5A8D92482CB1000541F0E /* ML Input + Output.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
